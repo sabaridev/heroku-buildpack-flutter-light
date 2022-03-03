@@ -65,7 +65,7 @@ if [ -d "$CACHE_DIR/.flutter" ] && grep -qFx $GIT_TAG "$CACHE_DIR/.flutter-versi
   cp -R $CACHE_DIR/.flutter $SOURCE_DIR
 else
   print "Installing SDK from Github repository."
-  git clone -c advice.detachedHead=false --depth 1 -b $GIT_TAG https://github.com/flutter/flutter.git .flutter --quiet
+  git clone https://github.com/flutter/flutter.git --quiet
 
   if [ "$GIT_TAG" == "stable" ]; then
     print "Running flutter upgrade command"
